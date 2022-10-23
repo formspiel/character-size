@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Character Height Calculator</title>
+		<meta name="description" content="Concept prototype to make workplace services ease-of use for everyone">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+	<h1>Character Height Calculator</h1>
+	<p>Some nice explanation what this is.</p>
+	<div class="section">
+		<fieldset>
+			<legend>Choose or add a screen</legend>
+			<div class="input-field-wrapper">
+				<label for="sel_bildschirm">Screen</label>
+				<select id="sel_bildschirm"></select>
+			</div>
+			
+			<details open>
+				<summary>Add new Screen</summary>
+				<div class="details-content-wrapper">
+					<div class="input-field-wrapper">
+						<label for="bildschirm_name">Screen name</label>
+						<input id="bildschirm_name" class="" type="text" required>
+					</div>
+					<div class="input-field-wrapper">
+						<label for="bildschirm_aufloesung_width">Display width<span> in <abbr title="Pixel">px</abbr></span></label>
+						<input id="bildschirm_aufloesung_width" class="ta_r" type="text" required><span class="unit"><abbr title="Pixel">px</abbr></span>
+					</div>
+					<div class="input-field-wrapper">
+						<label for="bildschirm_aufloesung_height">Display height<span> in <abbr title="Pixel">px</abbr></span></label>
+						<input id="bildschirm_aufloesung_height" class="ta_r" type="text" required><span class="unit"><abbr title="Pixel">px</abbr></span>
+					</div>
+					<div class="input-field-wrapper">
+						<label for="bildschirm_bildschirmdiagonale">Screen length of diagonal <span> in inch</span></label>
+						<input id="bildschirm_bildschirmdiagonale" class="ta_r" type="text" required><span class="unit"><abbr title="Inch">"</abbr></span>
+					</div>
+				</div>
+				<button id="save_bildschirm">Save Screen</button>
+				<p>TODO: consider &lt;output&gt; here. Cause it's an output ;-)</p>
+				<input id="save_bildschirm_json" type="text" style="display:none;width:100%;" readonly>
+			</details>
+		</fieldset>
+	</div>
+	
+	<div class="section">
+		<fieldset>
+			<legend>Manual entry</legend>
+			<div class="input-field-wrapper">
+				<label for="aufloesung_width">Display width<span> in <abbr title="Pixel">px</abbr></span></label>
+				<input id="aufloesung_width" class="ta_r" type="text" required><span class="unit"><abbr title="Pixel">px</abbr></span>
+			</div>
+			<div class="input-field-wrapper">
+				<label for="aufloesung_height">Display height<span> in <abbr title="Pixel">px</abbr></span></label>
+				<input id="aufloesung_height" class="ta_r" type="text" required><span class="unit"><abbr title="Pixel">px</abbr></span>
+			</div>
+			<div class="input-field-wrapper">
+				<label for="bildschirmdiagonale">Screen length of diagonal <span> in inch</span></label>
+				<input id="bildschirmdiagonale" class="ta_r" type="text" required><span class="unit"><abbr title="Inch">"</abbr></span>
+			</div>
+			<div class="input-field-wrapper">
+				<label for="entfernung">Users distance to screen<span> in <abbr title="Centimentre">cm</abbr></span></label>
+				<input id="entfernung" class="ta_r" type="text" required><span class="unit"><abbr title="Centimentre">cm</abbr></span>
+			</div>
+			<div class="input-field-wrapper">
+				<input type="radio" id="radio_monitor" name="radio_screen_type" value="50" required>
+				<label for="radio_monitor">Monitor</label>
+			</div>
+			<div class="input-field-wrapper">
+				<input type="radio" id="radio_laptop" name="radio_screen_type" value="40" required>
+				<label for="radio_laptop">Laptop</label>
+			</div>
+			<div class="input-field-wrapper">
+				<input type="radio" id="radio_tablet" name="radio_screen_type" value="40" required>
+				<label for="radio_tablet">Tablet</label>
+			</div>
+			<div class="input-field-wrapper">
+				<input type="radio" id="radio_smartphone" name="radio_screen_type" value="30" required>
+				<label for="radio_smartphone">Phone</label>
+			</div>
+
+			<button id="calc_char_height">Calculate Character Height</button>
+		</fieldset>
+	</div>
+	<div class="section">
+		<fieldset>
+			<legend>Minimum character height</legend>
+			<p>TODO: consider &lt;output&gt; here. Inputs must be at least "read-only"</p>
+			<div class="input-field-wrapper">
+				<input id="res_min_height_hochformat16" class="ta_r" aria-describedby="inputhint-01" type="text" disabled><span class="unit"><abbr title="Physical display pixel">dpx</abbr></span>
+				<div id="inputhint-01" class="input-hint">at 16' angle of vision (minimum character size for secondary&thinsp;/&thinsp;not work task related information)</div>
+			</div>
+			<div class="input-field-wrapper">
+				<input id="res_min_height_hochformat20" class="ta_r" aria-describedby="inputhint-02" type="text" disabled><span class="unit"><abbr title="Physical display pixel">dpx</abbr></span>
+				<div id="inputhint-02" class="input-hint">at 20' angle of vision (minimum character size)</div>
+			</div>
+			<div class="input-field-wrapper">
+				<input id="res_min_height_hochformat22" class="ta_r" aria-describedby="inputhint-03" type="text" disabled><span class="unit"><abbr title="Physical display pixel">dpx</abbr></span>
+				<div id="inputhint-03" class="input-hint">at 22' angle of vision (recommended character size)</div>
+			</div>
+		</fieldset>
+	</div>
+	<div class="section">
+		<details>
+			<summary>Instructions</summary>
+			<div class="details-content-wrapper">
+				<h2>1. Calculate Character Height</h2>
+				<ol>
+					<li>Entweder unter "Screen" einen Bildschirm wählen oder unter "Manual entry" die Werte eingeben.</li>
+					<li>Click "Calculate Character Height" button.</li>
+					<li>You'll see the result in the "Minimum character height" section</li>
+				</ol>
+				
+				<h2>2. Add a new Screen</h2>
+				<ol>
+					<li>Eingabefelder unter "Neuen Bildschirm anlegen" ausfüllen.</li>
+					<li>Auf den Button "Bildschirm speichern" klicken.</li>
+					<li>Den Text aus dem eingeblendeten Textfeld kopieren und in .misc/bildschirme.js unter dem richten Bildschirmtyp (1-Monitor, 2-Laptop, 3-Tablet, 4-Smartphone) einfügen.</li>
+					<li>Datei speichern.</li>
+				</ol>
+			</div>
+		</details>
+	</div>
+	<script defer src="screens.js"></script>
+	<script defer src="screen-management.js"></script>
+	<script defer src="character-height-calculator.js"></script>
+	</body>
+</html>

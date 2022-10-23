@@ -1,0 +1,164 @@
+/* ========== Colour Variables ========== */
+
+:root {
+	color-scheme: light dark;
+
+	--height: 30vw;
+	/* your light theme colours */
+	--debug: 		hsl(360, 100%, 84%);
+	--color-bg:     hsl(0, 0%, 94%);
+	--color-bg-box: hsl(0, 0%, 75%);
+	--color-border: hsl(0, 0%, 50%);
+	--color-text:   hsl(0, 0%, 16%);
+	--color-link:   hsl(0, 0%, 39%);
+	
+	--color-alert: 155,17,30;
+	--color-info: 16,98,155;
+	--color-success: 16,155,73;
+	
+	--radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+
+	:root {
+		/* your dark theme colours; overwrites the light theme colours */
+		--color-bg:     hsla(0, 0%, 20%, 1);
+		--color-bg-box: rgb(51, 51, 51);
+		--color-text:   rgb(217, 217, 217);
+		--color-link:   rgb(191, 191, 191);
+	}
+}
+
+@media (forced-colors) {
+
+	:root {
+		/* your high contrast theme colours; overwrites the light and dark theme colours */
+		--color-bg:     Canvas;
+		--color-bg-box: Canvas;
+		--color-text:   CanvasText;
+		--color-link:   ActiveText;
+	}
+
+}
+
+/* ========== Basic Styles ========== */
+
+* { box-sizing: border-box }
+
+body {
+	background-color: var(--color-bg);
+	font: normal 400 100%/1.4 sans-serif;
+	/* iPhone nodge hack */
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+h1 {
+	font-size: 125%;
+}
+
+h2 {
+	font-size: 110%;
+}
+
+h3 {
+	font-size: 100%;
+}
+a {
+	color: var(--color-link);
+}
+
+button {
+	font-size: 100%;
+	padding: .25rem;
+}
+
+.header {}
+.header--logo {}
+
+
+details {
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	padding: .5em .5em 0;
+}
+
+summary {
+	font-weight: bold;
+	margin: -.5em -.5em 0;
+	padding: .5em;
+}
+	summary:hover{
+		cursor: pointer
+	}
+
+details[open] {
+	padding: .5em;
+}
+
+details[open] summary {
+	border-bottom: 1px solid var(--color-border);
+	margin-bottom: .5em;
+}
+
+
+/* === form */
+form {}
+
+fieldset {
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+}
+
+legend {}
+
+label {}
+label:has(input) {}
+div:has(p)
+
+label[for]{
+	cursor:pointer;
+}
+
+label span {
+	font-style: italic;
+}
+
+input {}
+.input-hint {font-style: italic}
+
+.input-field-wrapper {
+	/* background: var(--debug); */
+	margin-bottom: .5rem;
+}
+
+.input-field-wrapper label {
+	padding-right: .25rem;
+	display: inline-block;
+	width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+	.input-field-wrapper label {
+		/* background: var(--debug); */
+		width: 40%;
+	}
+}
+
+abbr {
+	/* TODO debug */
+	/* color: red; */
+}
+
+@media (prefers-color-scheme: dark) {}
+
+@media (forced-colors)  {}
+
+
+
+/* ========== Layout & Design ========== */
+
+section,
+.section {
+	margin-bottom: 1rem;
+}
