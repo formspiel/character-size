@@ -35,9 +35,9 @@ screens = {
 		//,'Blackberry Keyone 4,5"':{"b":"1620","h":"1080","d":"4.5"}
 		,'Google Pixel 6 6,4"':{"b":"1080","h":"2400","d":"6.4"}
 		,'Nokia X30 5G 6,43"':{"b":"1080","h":"2400","d":"6.43"}
-		,'Samsung Galaxy Note 8 FHD 6.3"':{"b":"2220","h":"1080","d":"6.3"}
-		,'Samsung Galaxy Note 8 WQHD 6,3"':{"b":"2960","h":"1440","d":"6.3"}
-		,'Samsung Galaxy Note 8 HD 6,3"':{"b":"1480","h":"720","d":"6.3"}
+		//,'Samsung Galaxy Note 8 FHD 6.3"':{"b":"2220","h":"1080","d":"6.3"}
+		//,'Samsung Galaxy Note 8 WQHD 6,3"':{"b":"2960","h":"1440","d":"6.3"}
+		//,'Samsung Galaxy Note 8 HD 6,3"':{"b":"1480","h":"720","d":"6.3"}
 		,'Samsung Galaxy S21 5G 6,2"':{"b":"1080","h":"2400","d":"6.2"}
 		,'Samsung J5 (2016) 5,2"':{"b":"720","h":"1280","d":"5.2"}
 	}
